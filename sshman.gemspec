@@ -1,12 +1,12 @@
 Gem::Specification.new do |spec|
   spec.name          = "sshman"
-  spec.version       = "0.2.0"
-  spec.authors       = ["Victor Bjørke"]
+  spec.version       = "0.2.1"
+  spec.authors       = ["SubnetMasked"]
   spec.email         = ["bjorke@startmail.com "]
 
   spec.summary       = "A terminal-based SSH manager"
   spec.description   = "A simple terminal-based SSH manager to add, list, delete, and connect to SSH servers."
-  spec.homepage      = "https://github.com/VictorBjorke/sshman"
+  spec.homepage      = "https://github.com/subnetmasked/sshman"
   spec.license       = "GPL-3.0"
 
   spec.files         = Dir["lib/**/*", "exe/*"]  # Includes all necessary files

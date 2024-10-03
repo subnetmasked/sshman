@@ -30,7 +30,7 @@ module Sshman
     # Display the current version
     
     def version
-      puts "sshman version 0.2.0"
+      puts "sshman version 0.2.1"
     end
 
     # This method starts the interactive menu (default)
