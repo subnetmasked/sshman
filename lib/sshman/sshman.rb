@@ -17,7 +17,7 @@ module Sshman
       when 'delete'
         new.delete_server
       when 'connect'
-        new.connect_to_server
+        new.connect_to_server(argv[1])
       when 'help'
         new.display_help
       when 'version'
@@ -191,11 +191,15 @@ HELP
     end
 
     # Connect to a server using SSH
-    def connect_to_server
+    def connect_to_server(alias_name = nil)
+      # If no alias is provided, ask the user for one
+      if alias_name.nil?
       print "Enter alias of the server to connect: "
       alias_name = gets.chomp.strip
+      end
+      
+      # Search for the server in the CSV file
       server = nil
-
       CSV.foreach(SERVERS_CSV, headers: true) do |row|
         if row['alias'] == alias_name
           server = row
