@@ -32,7 +32,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/sshman.git
+   git clone https://github.com/subnetmasked/sshman.git
    cd sshman
    ```
 
@@ -40,7 +40,7 @@
 
    ```bash
    gem build sshman.gemspec
-   gem install ./sshman-0.1.0.gem --user-install
+   gem install ./sshman-0.2.3.gem --user-install
    ```
 
 ---
