@@ -20,9 +20,17 @@ module Sshman
         new.connect_to_server
       when 'help'
         new.display_help
+      when 'version'
+        new.version
       else
         puts "Unknown command: #{argv[0]}. Use 'sshman help' for a list of commands."
       end
+    end
+
+    # Display the current version
+    
+    def version
+      puts "sshman version 0.2.0"
     end
 
     # This method starts the interactive menu (default)
@@ -80,6 +88,7 @@ Commands:
   edit          Edit an existing server
   delete        Delete a server by its alias
   connect       Connect to a server by its alias
+  version       Display the current version
   help          Display this help information
 HELP
     end
@@ -98,7 +107,7 @@ HELP
         puts "%-15s %-25s %-6s %-15s %-30s" % [row['alias'], row['hostname'], row['port'], row['username'], row['ssh_key']]
       end
     end
-
+    
     # Add a new server to the CSV file
     def add_server
       puts "#{CYAN}Adding a new server...#{RESET_COLOR}"
