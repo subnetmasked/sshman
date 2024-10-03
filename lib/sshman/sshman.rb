@@ -1,4 +1,3 @@
-
 # lib/sshman/sshman.rb
 
 require 'csv'
@@ -6,8 +5,28 @@ require 'io/console'
 
 module Sshman
   class CLI
-    # Entry point for the command line execution
-    def self.start
+    # This method handles inline commands
+    def self.start(argv)
+      case argv[0]
+      when 'list'
+        new.list_servers
+      when 'add'
+        new.add_server
+      when 'edit'
+        new.edit_server
+      when 'delete'
+        new.delete_server
+      when 'connect'
+        new.connect_to_server
+      when 'help'
+        new.display_help
+      else
+        puts "Unknown command: #{argv[0]}. Use 'sshman help' for a list of commands."
+      end
+    end
+
+    # This method starts the interactive menu (default)
+    def self.start_interactive
       new.main
     end
 
@@ -54,15 +73,14 @@ module Sshman
     # Display help information
     def display_help
       puts <<-HELP
-Usage: sshman [OPTIONS]
-Options:
-  list         List all saved servers
-  add          Add a new server
-  edit         Edit an existing server
-  delete       Delete a server by its alias
-  connect      Connect to a server by its alias
-  help         Display this help information
-  quit         Exit the application
+Usage: sshman [COMMAND]
+Commands:
+  list          List all saved servers
+  add           Add a new server configuration
+  edit          Edit an existing server
+  delete        Delete a server by its alias
+  connect       Connect to a server by its alias
+  help          Display this help information
 HELP
     end
 
