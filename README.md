@@ -1,6 +1,5 @@
 # 🚀 sshman: A Simple and Secure SSH Manager
 
-
 [![Gem Version](https://badge.fury.io/rb/sshman.svg)](https://badge.fury.io/rb/sshman) [![License: GPL](https://img.shields.io/badge/License-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 **sshman** is a terminal-based SSH manager built with Ruby that simplifies managing your SSH connections. It enables you to easily add, edit, delete, and connect to servers with just a few commands. The tool supports SSH keys and passwords, and it secures your configuration with restricted file permissions.
