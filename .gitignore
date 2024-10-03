@@ -1,6 +1,5 @@
 *.gem
 *.rbc
-*.swp
 /.config
 /coverage/
 /InstalledFiles
@@ -44,14 +43,29 @@ build-iPhoneSimulator/
 /vendor/bundle
 /lib/bundler/man/
 
-# for a library or gem, you might want to ignore these files since the code is
-# intended to run in multiple environments; otherwise, check them in:
-# Gemfile.lock
-# .ruby-version
-# .ruby-gemset
+# Ignore the built gem files
+*.gem
 
-# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+# Ignore bundler config
+.bundle/
+
+# Ignore system gem files and installed gems
+vendor/
+.ruby-version
+.rbenv-gemsets
+.rbenv-vars
 .rvmrc
+.rvm/
 
-# Used by RuboCop. Remote config files pulled in from inherit_from directive.
-# .rubocop-https?--*
+# Ignore log and temporary files
+*.log
+*.tmp
+*.swp
+
+# Ignore local Ruby gem installation directories
+/.bundle
+/vendor/bundle
+/.gem
+
+# Ignore coverage reports
+coverage/

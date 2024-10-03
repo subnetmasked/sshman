@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative "../lib/sshman/sshman"
+
+Sshman::CLI.start
