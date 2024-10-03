@@ -28,13 +28,6 @@
    ```bash
    gem install sshman
    ```
-
-2. Or install from the local `.gem` file if you've built it yourself:
-
-   ```bash
-   gem install ./sshman-0.1.0.gem --user-install
-   ```
-
 ### From Source
 
 1. Clone the repository:

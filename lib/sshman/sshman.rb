@@ -1,7 +1,7 @@
 # lib/sshman/sshman.rb
-
 require 'csv'
 require 'io/console'
+require_relative 'version'
 
 module Sshman
   class CLI
@@ -30,7 +30,7 @@ module Sshman
     # Display the current version
     
     def version
-      puts "sshman version 0.2.1"
+      puts "sshman version #{Sshman::VERSION}"
     end
 
     # This method starts the interactive menu (default)

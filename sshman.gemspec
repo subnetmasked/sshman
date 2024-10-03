@@ -1,6 +1,8 @@
+require_relative "lib/sshman/version"
+
 Gem::Specification.new do |spec|
   spec.name          = "sshman"
-  spec.version       = "0.2.2"
+  spec.version       = Sshman::VERSION
   spec.authors       = ["SubnetMasked"]
   spec.email         = ["bjorke@startmail.com "]
 
