@@ -1,5 +1,5 @@
-![Gem Version](https://badge.fury.io/rb/sshman.svg)
-![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
+[![Gem Version](https://badge.fury.io/rb/sshman.svg)](https://badge.fury.io/rb/sshman)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # 🚀 sshman: A Simple and Secure SSH Manager
 
