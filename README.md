@@ -42,12 +42,12 @@ After installing the gem, you can use the sshman command to manage your SSH serv
 Inline Commands
 You can now run commands directly:
 
-sshman list       # List all saved servers
-sshman add        # Add a new server configuration
-sshman edit       # Edit an existing server
-sshman delete     # Delete a server by its alias
-sshman connect    # Connect to a server by its alias
-sshman help       # Display help information
+- sshman list       # List all saved servers
+- shman add        # Add a new server configuration
+- sshman edit       # Edit an existing server
+- sshman delete     # Delete a server by its alias
+- sshman connect    # Connect to a server by its alias
+- sshman help       # Display help information
 
 ## Interactive Mode
 Simply run:
@@ -65,6 +65,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 - Commit your changes: git commit -m 'Add some feature'
 - Push to the branch: git push origin my-new-feature
 - Submit a pull request
+
 ## 📄 License
 This project is licensed under the GNU General Public License (GPL-3.0) - see the LICENSE file for details.
 
