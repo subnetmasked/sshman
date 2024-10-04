@@ -1,10 +1,19 @@
-# lib/sshman/sshman.rb
 require 'csv'
 require 'io/console'
+require 'logger'
 require_relative 'version'
 
 module Sshman
+  RESET_COLOR = "\033[0m"
+  RED = "\033[31m"
+  GREEN = "\033[32m"
+  YELLOW = "\033[33m"
+  CYAN = "\033[36m"
+  SERVERS_CSV = File.expand_path("~/.sshman_servers.csv")
+
   class CLI
+    LOGGER = Logger.new(File.expand_path('~/.sshman.log'))
+
     # This method handles inline commands
     def self.start(argv)
       case argv[0]
@@ -28,7 +37,6 @@ module Sshman
     end
 
     # Display the current version
-    
     def version
       puts "sshman version #{Sshman::VERSION}"
     end
@@ -107,7 +115,7 @@ HELP
         puts "%-15s %-25s %-6s %-15s %-30s" % [row['alias'], row['hostname'], row['port'], row['username'], row['ssh_key']]
       end
     end
-    
+
     # Add a new server to the CSV file
     def add_server
       puts "#{CYAN}Adding a new server...#{RESET_COLOR}"
@@ -194,8 +202,8 @@ HELP
     def connect_to_server(alias_name = nil)
       # If no alias is provided, ask the user for one
       if alias_name.nil?
-      print "Enter alias of the server to connect: "
-      alias_name = gets.chomp.strip
+        print "Enter alias of the server to connect: "
+        alias_name = gets.chomp.strip
       end
       
       # Search for the server in the CSV file
@@ -208,6 +216,7 @@ HELP
       end
 
       unless server
+        LOGGER.error("Failed connection attempt to #{alias_name}: No server found")
         puts "#{RED}No server found with alias '#{alias_name}'.#{RESET_COLOR}"
         return
       end
@@ -215,16 +224,14 @@ HELP
       ssh_command = "ssh #{server['username']}@#{server['hostname']} -p #{server['port']}"
       ssh_command += " -i #{server['ssh_key']}" unless server['ssh_key'].to_s.empty?
 
-      puts "#{CYAN}Connecting to #{alias_name}...#{RESET_COLOR}"
-      exec ssh_command
+      LOGGER.info("Connecting to #{alias_name}...")
+      
+      # Use system to log successful connection
+      if system(ssh_command)
+        LOGGER.info("Successfully connected to #{alias_name}")
+      else
+        LOGGER.error("Failed to connect to #{alias_name}")
+      end
     end
-
-    # Constants for coloring terminal output
-    RESET_COLOR = "\033[0m"
-    RED = "\033[31m"
-    GREEN = "\033[32m"
-    YELLOW = "\033[33m"
-    CYAN = "\033[36m"
-    SERVERS_CSV = File.expand_path("~/.sshman_servers.csv")
   end
 end
