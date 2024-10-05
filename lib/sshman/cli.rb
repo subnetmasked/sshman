@@ -3,7 +3,7 @@ require_relative 'constants'
 require_relative 'version'
 require_relative 'server_manager'
 require_relative 'utils'
-reuqire_relative 'key_manager'
+require_relative 'key_manager'
 
 module Sshman
   class CLI

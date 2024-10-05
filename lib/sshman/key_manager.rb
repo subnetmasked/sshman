@@ -1,4 +1,3 @@
-# lib/sshman/key_manager.rb
 require 'openssl'
 require 'fileutils'
 
@@ -26,7 +25,7 @@ module Sshman
       key = OpenSSL::PKey::RSA.new(bit_size)
       cipher = OpenSSL::Cipher.new('AES-128-CBC') if passphrase != ""
       private_key = passphrase.empty? ? key.to_pem : key.export(cipher, passphrase)
-      public_key = "#{key.ssh_type} #{[key.to_blob].pack('m0')}"
+      public_key = "ssh-rsa #{[key.public_key.to_der].pack('m0')}"
 
       File.write(private_key_path, private_key)
       File.write(public_key_path, public_key)
