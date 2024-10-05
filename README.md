@@ -57,6 +57,26 @@ sshman
 
 This will launch the interactive menu where you can add, edit, delete, or connect to servers interactively.
 
+# sshman Roadmap
+
+- Add SSH server configurations✅
+- List all saved servers in a neatly formatted table✅
+- Edit existing server configurations✅
+- Delete server entries by alias✅
+- Connect to servers via SSH in a single command✅
+- Security: Restricts file permissions to protect SSH keys✅
+- User-friendly CLI: Interactive, colorized terminal-based interface with built-in help✅
+- Session logging and replay✅
+- Terminal-based GUI🛠️
+- SSH key generation⏳
+- Remote script execution⏳
+- Multi-factor authentication (MFA) support⏳
+- Automated server health checks⏳
+- Dashboard for server status⏳
+- Customizable connection profiles⏳
+- Import/export server configurations⏳
+- Batch operations on multiple servers⏳
+
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page to report bugs or request features.
 
