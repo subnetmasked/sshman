@@ -13,6 +13,7 @@ Delete server entries by alias
 Connect to servers via SSH in a single command
 Security: Restricts file permissions to protect SSH keys
 User-friendly CLI: Interactive, colorized terminal-based interface with built-in help
+SSH-key generation: Easy fool proof ssh-key generation
 
 ## 📦 Installation
 
@@ -34,7 +35,7 @@ Build and install the gem:
 
 ```shell
 gem build sshman.gemspec
-gem install ./sshman-0.2.3.gem --user-install
+gem install ./sshman-X.X.X.gem --user-install
 ```
 ## 🚀 Quick Start
 After installing the gem, you can use the sshman command to manage your SSH servers.
@@ -67,7 +68,7 @@ This will launch the interactive menu where you can add, edit, delete, or connec
 - Security: Restricts file permissions to protect SSH keys✅
 - User-friendly CLI: Interactive, colorized terminal-based interface with built-in help✅
 - Session logging and replay✅
-- SSH key generation⏳
+- SSH key generation✅
 - Remote script execution⏳
 - Multi-factor authentication (MFA) support⏳
 - Automated server health checks⏳
