@@ -3,6 +3,7 @@ require_relative 'constants'
 require_relative 'version'
 require_relative 'server_manager'
 require_relative 'utils'
+require_relative 'key_manager'
 
 module Sshman
   class CLI
@@ -20,6 +21,8 @@ module Sshman
         new.delete_server
       when 'connect'
         new.connect_to_server(argv[1])
+      when 'generate_key'
+        KeyManager.generate_key
       when 'help'
         new.display_help
       when 'version'
@@ -41,7 +44,7 @@ module Sshman
       ensure_csv_file
 
       loop do
-        puts "\n#{YELLOW}Options:#{RESET_COLOR} list, add, edit, delete, connect, help, quit"
+        puts "\n#{YELLOW}Options:#{RESET_COLOR} list, add, edit, delete, connect, generate_key, help, quit"
         print "#{CYAN}Choose an option: #{RESET_COLOR}"
         option = gets.chomp.downcase.strip
 
@@ -56,6 +59,8 @@ module Sshman
           delete_server
         when 'connect'
           connect_to_server
+        when 'generate_key'
+          KeyManager.generate_key
         when 'help'
           display_help
         when 'quit'
