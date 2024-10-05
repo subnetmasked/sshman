@@ -44,26 +44,26 @@ module Sshman
       ensure_csv_file
 
       loop do
-        puts "\n#{YELLOW}Options:#{RESET_COLOR} list, add, edit, delete, connect, generate_key, help, quit"
+        puts "\n#{YELLOW}Options:#{RESET_COLOR} (1)list, (2)add, (3)edit, (4)delete, (5)connect, (6)generate_key, (7)help, (q)quit"
         print "#{CYAN}Choose an option: #{RESET_COLOR}"
         option = gets.chomp.downcase.strip
 
         case option
-        when 'list'
+        when 'list', 'ls', '1'
           list_servers
-        when 'add'
+        when 'add', '2'
           add_server
-        when 'edit'
+        when 'edit', '3'
           edit_server
-        when 'delete'
+        when 'delete', '4'
           delete_server
-        when 'connect'
+        when 'connect', '5'
           connect_to_server
-        when 'generate_key'
+        when 'generate_key', '6'
           KeyManager.generate_key
-        when 'help'
+        when 'help', '7'
           display_help
-        when 'quit'
+        when 'quit', 'q'
           puts "#{GREEN}Goodbye!#{RESET_COLOR}"
           break
         else
