@@ -70,4 +70,4 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 This project is licensed under the GNU General Public License (GPL-3.0) - see the LICENSE file for details.
 
 ## 💬 Questions?
-If you have any questions or need further clarification, feel free to open an issue or reach out to me at bjorke@startmail.com.
+If you have any questions or need further clarification, feel free to open an issue or reach out to me at subnetmasked@cock.li.
