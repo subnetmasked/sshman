@@ -6,14 +6,14 @@ sshman is a terminal-based SSH manager built with Ruby that simplifies managing 
 
 ## ✨ Features
 
-Add SSH server configurations
-List all saved servers in a neatly formatted table
-Edit existing server configurations
-Delete server entries by alias
-Connect to servers via SSH in a single command
-Security: Restricts file permissions to protect SSH keys
-User-friendly CLI: Interactive, colorized terminal-based interface with built-in help
-SSH-key generation: Easy fool proof ssh-key generation
+- Add SSH server configurations
+- List all saved servers in a neatly formatted table
+- Edit existing server configurations
+- Delete server entries by alias
+- Connect to servers via SSH in a single command
+- Security: Restricts file permissions to protect SSH keys
+- User-friendly CLI: Interactive, colorized terminal-based interface with built-in help
+- SSH-key generation: Easy fool proof ssh-key generation
 
 ## 📦 Installation
 
