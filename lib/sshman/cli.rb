@@ -31,7 +31,7 @@ module Sshman
         puts "Unknown command: #{argv[0]}. Use 'sshman help' for a list of commands."
       end
     end
-
+    # Pulls the version from the version.rb file
     def version
       puts "sshman version #{Sshman::VERSION}"
     end
@@ -42,7 +42,7 @@ module Sshman
 
     def main
       ensure_csv_file
-
+      # Main loop
       loop do
         puts "\n#{YELLOW}Options:#{RESET_COLOR} (1)list, (2)add, (3)edit, (4)delete, (5)connect, (6)generate_key, (7)help, (q)quit"
         print "#{CYAN}Choose an option: #{RESET_COLOR}"
@@ -71,7 +71,7 @@ module Sshman
         end
       end
     end
-
+    # Ensures that the csv file exists
     def ensure_csv_file
       Sshman::Utils.ensure_csv_file
     end
