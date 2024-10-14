@@ -1,10 +1,8 @@
 #!/usr/bin/env ruby
-require_relative "../lib/sshman/sshman"
-# Check if any arguments are passed (i.e., inline commands)
+require 'sshman'
+
 if ARGV.empty?
-  # No arguments passed, start the interactive mode
-  Sshman::CLI.start_interactive
+  SSHMan::TUI.new.start
 else
-  # Pass command-line arguments for inline commands (e.g., `sshman list`)
-  Sshman::CLI.start(ARGV)
+  SSHMan::CLI.start(ARGV)
 end

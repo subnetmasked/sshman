@@ -1,5 +1,5 @@
 # lib/sshman/version.rb
 
-module Sshman
-  VERSION = "0.3.3"
+module SSHMan
+  VERSION = "0.4.0"
 end
